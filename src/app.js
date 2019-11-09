@@ -17,14 +17,24 @@ const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json'), 'ut
 const users = JSON.parse(userData);
 
 
-app.get('/', (req, res) => res.render('index', {title: 'Account Summary', accounts}));
+app.get('/', (req, res) => { 
+    res.render('index', {title: 'Account Summary', accounts});
+});
 
-app.get('/savings', (req, res) => res.render('account', {title: 'account: account.savings'}));
+app.get('/savings', (req, res) => { 
+    res.render('account', {title: 'account: account.savings'});
+});
 
-app.get('/checking', (req, res) => res.render('account', {title: 'account: account.checking'}));
+app.get('/checking', (req, res) => { 
+    res.render('account', {title: 'account: account.checking'});
+});
 
-app.get('/credit', (req, res) => res.render('account', {title: 'account: account.credit'}));
+app.get('/credit', (req, res) => {
+    res.render('account', {title: 'account: account.credit'});
+});
 
-app.get('/profile', (req, res) => res.render('profile', {title: 'user: users[o]'}));
+app.get('/profile', (req, res) => {
+    res.render('profile', {title: 'user: users[o]'});
+});
 
 app.listen(3000, () => console.log('PS Project Running on port 3000!'));
